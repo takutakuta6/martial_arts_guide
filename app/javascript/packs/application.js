@@ -5,3 +5,7 @@ require("channels")
 
 require("bootstrap/dist/js/bootstrap")
 require("@fortawesome/fontawesome-free/js/all")
+
+document.addEventListener("turbolinks:load", () => {
+  $('.drawer').drawer();
+})
