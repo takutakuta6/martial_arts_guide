@@ -10,10 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_23_023830) do
+ActiveRecord::Schema.define(version: 2020_07_24_084231) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "game_comments", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "game_movie_id", null: false
+    t.string "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_movie_id"], name: "index_game_comments_on_game_movie_id"
+    t.index ["user_id"], name: "index_game_comments_on_user_id"
+  end
+
+  create_table "game_likes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "game_movie_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_movie_id"], name: "index_game_likes_on_game_movie_id"
+    t.index ["user_id", "game_movie_id"], name: "index_game_likes_on_user_id_and_game_movie_id", unique: true
+    t.index ["user_id"], name: "index_game_likes_on_user_id"
+  end
+
+  create_table "game_movies", force: :cascade do |t|
+    t.string "url"
+    t.string "catchphrase"
+    t.integer "position"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["catchphrase"], name: "index_game_movies_on_catchphrase"
+    t.index ["url"], name: "index_game_movies_on_url", unique: true
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+    t.string "group"
+    t.string "birthplace"
+    t.string "content"
+    t.integer "position"
+    t.float "height"
+    t.float "weight"
+    t.integer "record"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["group"], name: "index_players_on_group"
+    t.index ["name"], name: "index_players_on_name", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -21,10 +67,28 @@ ActiveRecord::Schema.define(version: 2020_07_23_023830) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
+    t.integer "failed_attempts", default: 0, null: false
+    t.string "unlock_token"
+    t.datetime "locked_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.string "image"
+    t.text "introduction"
+    t.string "birthplace"
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["name"], name: "index_users_on_name", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  add_foreign_key "game_comments", "game_movies"
+  add_foreign_key "game_comments", "users"
+  add_foreign_key "game_likes", "game_movies"
+  add_foreign_key "game_likes", "users"
 end

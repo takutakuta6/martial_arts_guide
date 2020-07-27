@@ -1,0 +1,2 @@
+class GameMovie < ApplicationRecord
+end
