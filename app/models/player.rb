@@ -7,3 +7,4 @@ class Player < ApplicationRecord
   validates :height, presence: true, numericality: true
   validates :weight, presence: true, numericality: true
   validates :record, numericality: { only_integer: true }
+end
