@@ -1,16 +1,16 @@
-ActiveAdmin.register Player do
+ActiveAdmin.register GameComment do
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :name, :image, :group, :birthplace, :content, :position, :height, :weight, :battle_record
+  # permit_params :user_id, :game_movie_id, :content
   #
   # or
   #
   # permit_params do
-  #   permitted = [:name, :image, :group, :birthplace, :content, :position, :height, :weight, :battle_record]
+  #   permitted = [:user_id, :game_movie_id, :content]
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
