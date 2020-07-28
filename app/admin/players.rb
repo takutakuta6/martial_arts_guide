@@ -1,4 +1,5 @@
 ActiveAdmin.register Player do
+  permit_params Player.attribute_names.map(&:to_sym) - %i[created_at updated_at]
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -14,5 +15,5 @@ ActiveAdmin.register Player do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  
+
 end

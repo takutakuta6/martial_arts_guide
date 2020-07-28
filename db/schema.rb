@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_27_081504) do
+ActiveRecord::Schema.define(version: 2020_07_27_071525) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,7 +71,10 @@ ActiveRecord::Schema.define(version: 2020_07_27_081504) do
     t.integer "position"
     t.float "height"
     t.float "weight"
-    t.integer "battle_record"
+    t.integer "win"
+    t.integer "lose"
+    t.integer "ko_win"
+    t.integer "draw"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["group"], name: "index_players_on_group"
