@@ -9,7 +9,10 @@ class CreatePlayers < ActiveRecord::Migration[6.0]
       t.integer :position
       t.float :height
       t.float :weight
-      t.integer :record
+      t.integer :win
+      t.integer :lose
+      t.integer :ko_win
+      t.integer :draw
 
       t.timestamps
     end

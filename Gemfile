@@ -18,6 +18,9 @@ gem 'rails-i18n', '~> 6.0'
 gem 'devise-i18n'
 # gem 'devise-bootstrap-views', '~> 1.0'
 
+# 管理者画面
+gem 'activeadmin'
+
 # 画像投稿機能
 gem 'carrierwave', '~> 2.0'
 gem 'fog-aws'

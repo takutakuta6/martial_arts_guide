@@ -6,4 +6,8 @@ class Player < ApplicationRecord
   validates :position, numericality: { only_integer: true }
   validates :height, presence: true, numericality: true
   validates :weight, presence: true, numericality: true
-  validates :record, numericality: { only_integer: true }
+  validates :win, numericality: { only_integer: true }
+  validates :lose, numericality: { only_integer: true }
+  validates :ko_win, numericality: { only_integer: true }
+  validates :draw, numericality: { only_integer: true }
+end
