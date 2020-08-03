@@ -55,14 +55,15 @@ body {
 
 // トップページ
 
-.top-title {
-  color: rgb(7, 95, 153);
-}
-
 .top-container {
   position: relative;
   max-width: 1000px;
   margin: 0 auto;
+
+  .top-title {
+    color: rgb(7, 95, 153);
+    font-size: 1.5rem;
+  }
 
   .top-img {
     width: 100%;
@@ -71,6 +72,10 @@ body {
 
   .top-img-3 {
     filter: brightness(170%);
+  }
+
+  .sub-link {
+    color: rgb(7, 95, 153);
   }
 
   p {

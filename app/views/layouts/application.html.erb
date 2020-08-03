@@ -10,8 +10,8 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body class="drawer drawer--right">
-    <%= render "shared/navbar" %>
-    <div class="container-fluid p-4 p-md-5 <%= base_width %>">
+    <div class="container-fluid px-4 px-md-5 py-2 <%= base_width %>">
+      <%= render "shared/navbar" %>
       <%= render 'shared/flash_messages' %>
       <%= yield %>
     </div>
