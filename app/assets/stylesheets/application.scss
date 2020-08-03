@@ -1,5 +1,5 @@
 /*
- *= require_tree .
+ *= require_tree ./autoloads/
  *= require_self
  */
 
@@ -10,6 +10,26 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
 @import "@fortawesome/fontawesome-free/scss/regular";
 @import "@fortawesome/fontawesome-free/scss/solid";
 @import "@fortawesome/fontawesome-free/scss/brands";
+
+
+body {
+  background-color: rgb(253, 250, 250);
+}
+
+// .drawer-hamburger-icon,
+// .drawer-hamburger-icon:after,
+// .drawer-hamburger-icon:before {
+//   background-color: white;
+// }
+
+.drawer-hamburger {
+  background-color: rgb(7, 95, 153);
+
+  &:hover {
+    background-color: rgb(7, 95, 153);
+
+  }
+}
 
 // 横幅
 
@@ -25,4 +45,67 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
 
 .alert-alert {
   @extend .alert-danger;
+}
+
+@mixin textStroke($strokeColor) {
+  -webkit-text-stroke-width: 1.3px;
+  -webkit-text-stroke-color: $strokeColor;
+  -webkit-text-fill-color: rgb(7, 95, 153);
+}
+
+// トップページ
+
+.top-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  .top-title {
+    color: rgb(7, 95, 153);
+    font-size: 1.5rem;
+  }
+
+  .top-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .top-img-3 {
+    filter: brightness(170%);
+  }
+
+  .sub-link {
+    color: rgb(7, 95, 153);
+  }
+
+  p {
+    position: absolute;
+    font-family: 'Playball', cursive;
+
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+
+    bottom: 5px;
+    left: 5px;
+    font-size: 30px;
+
+    @media screen and (min-width: 570px) {
+      bottom: 3%;
+      left: 55px;
+      font-size: 75px;
+    }
+  }
+
+  p.yellow-stroke {
+    @include textStroke(white)
+  }
+
+  p.red-stroke {
+    @include textStroke (black)
+  }
+
+  p.lime-stroke {
+    @include textStroke (white)
+  }
 }
