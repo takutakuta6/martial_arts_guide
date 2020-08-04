@@ -5,9 +5,54 @@ ActiveAdmin.register Player do
     f.inputs do
       f.input :group, as: :select, collection: %w[RIZIN K-1]
       f.input :position, min: 1
+      f.input :name
+      f.input :age
+      f.input :birthplace
+      f.input :content
+      f.input :height
+      f.input :weight
+      f.input :win
+      f.input :lose
+      f.input :ko_win
+      f.input :draw
+      f.input :image
     end
-    f.inputs except: [:group, :position]
     f.actions
+  end
+
+  index do
+    selectable_column
+    id_column
+    column :group
+    column :position
+    column :name
+    column :age
+    column :birthplace
+    column :height
+    column :weight
+
+    actions
+  end
+
+  show do
+    attributes_table do
+      row :group
+      row :position
+      row :name
+      row :age
+      row :birthplace
+      row :content
+      row :height
+      row :weight
+      row :win
+      row :lose
+      row :ko_win
+      row :draw
+      row :image
+      row :image do
+        image_tag(player.image.url) if player.image?
+      end
+    end
   end
 
   # See permitted parameters documentation:

@@ -14,6 +14,7 @@ ja:
         birthplace: 出身地
       player:
         name: 名前
+        age: 年齢
         image: 画像
         group: 団体
         birthplace: 出身地

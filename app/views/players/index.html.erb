@@ -1,7 +1,9 @@
 <h2>RIZIN</h2>
 <% @rizin_players.each do |player| %>
   <p>
-    <%= player.name %>
+    <%= image_tag player.image.url %>
+  </p>
+  <p>
     <%= player.birthplace %>
   </p>
 <% end %>
