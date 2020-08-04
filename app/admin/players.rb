@@ -1,6 +1,15 @@
 ActiveAdmin.register Player do
   permit_params Player.attribute_names.map(&:to_sym) - %i[created_at updated_at]
 
+  form do |f|
+    f.inputs do
+      f.input :group, as: :select, collection: %w[RIZIN K-1]
+      f.input :position, min: 1
+    end
+    f.inputs except: [:group, :position]
+    f.actions
+  end
+
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #

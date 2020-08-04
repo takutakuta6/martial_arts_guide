@@ -1,6 +1,7 @@
 class Player < ApplicationRecord
+  GROUP_VALUES = %w[RIZIN K-1]
   validates :name, presence: true, length: { maximum: 100 }
-  validates :group, presence: true, length: { maximum: 100 }
+  validates :group, presence: true, inclusion: { in: GROUP_VALUES }
   validates :birthplace, length: { maximum: 20 }
   validates :content, length: { maximum: 10000 }
   validates :position, numericality: { only_integer: true }
