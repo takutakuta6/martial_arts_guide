@@ -1,0 +1,147 @@
+$main-color: rgb(7, 95, 153);
+$k-1-color: rgb(233, 175, 17);
+
+#players-container {
+  .movie-card {
+    background: #dfe9f3;
+
+    img {
+      opacity: 1;
+      -webkit-transition: .3s ease-in-out;
+      transition: .3s ease-in-out;
+
+      &:hover {
+        opacity: .6;
+      }
+    }
+  }
+
+  .card-text {
+    table {
+      width: 90%;
+      margin: 0 auto;
+      border-spacing: 0;
+
+      th {
+        padding: 5px 20px;
+      }
+
+      td {
+        border-bottom: solid 2px #ddd;
+        text-align: right;
+        padding: 7px 30px;
+      }
+    }
+  }
+
+  .RIZIN-card table th {
+    border-bottom: solid 2px $main-color;
+  }
+
+  .K-1-card table th {
+    border-bottom: solid 2px $k-1-color;
+  }
+
+  h2 {
+    position: relative;
+    padding-left: 40px;
+
+    &:before {
+      position: absolute;
+      content: '';
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 0;
+      border: none;
+      border-left: solid 20px transparent;
+      border-bottom: solid 30px $main-color;
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      bottom: -3px;
+      left: 10px;
+      width: 190px;
+      border-bottom: solid 5px $main-color;
+    }
+  }
+
+  h2.K-1-title {
+    &:before {
+      border-bottom: solid 30px $k-1-color;
+    }
+
+    &:after {
+      border-bottom: solid 5px $k-1-color;
+    }
+  }
+
+  h3.style-name,
+  h3.K-1-style-name {
+    position: relative;
+    display: inline-block;
+    padding: 0 55px;
+
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      display: inline-block;
+      width: 45px;
+      height: 2px;
+      border-top: solid 1px $main-color;
+      border-bottom: solid 1px $main-color;
+    }
+
+    &:before {
+      left: 0;
+    }
+
+    &:after {
+      right: 0;
+    }
+  }
+
+  h3.K-1-style-name {
+
+    &:before,
+    &:after {
+      border-top: solid 1px $k-1-color;
+      border-bottom: solid 1px $k-1-color;
+    }
+  }
+
+
+  h3.ranking_name,
+  h3.K-1-ranking_name {
+    background: linear-gradient(transparent 70%, $main-color 90%);
+    width: 200px;
+  }
+
+  h3.K-1-ranking_name {
+    background: linear-gradient(transparent 70%, $k-1-color 90%);
+  }
+
+  .player-name {
+    width: 18rem;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0.3em;
+    color: white;
+    font-size: 17px
+  }
+
+  .RIZIN-card .player-name {
+    background: $main-color;
+
+  }
+
+  .K-1-card .player-name {
+    background: $k-1-color;
+  }
+
+}

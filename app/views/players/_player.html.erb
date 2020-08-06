@@ -1,0 +1,26 @@
+<div class="col-12 col-md-6 col-lg-4 <%= player.group %>-card">
+  <div class="player-name"><%= player.name %></div>
+  <div class="card mx-auto mb-3" style="width: 18rem;">
+    <div class="movie-card">
+      <%= image_tag player.image.url, class: "card-img-top" %>
+    </div>
+    <div class="card-body pt-3">
+      <div class="card-text">
+        <table>
+          <tr>
+            <th>Age</th>
+            <td><%= player.age %></td>
+          </tr>
+          <tr>
+            <th>Height</th>
+            <td><%= player.height %></td>
+          </tr>
+          <tr>
+            <th>Weight</th>
+            <td><%= player.weight %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

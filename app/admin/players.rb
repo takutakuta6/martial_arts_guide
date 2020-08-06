@@ -7,6 +7,7 @@ ActiveAdmin.register Player do
       f.input :position, min: 1
       f.input :name
       f.input :age
+      f.input :style
       f.input :birthplace
       f.input :content
       f.input :height
@@ -15,6 +16,7 @@ ActiveAdmin.register Player do
       f.input :lose
       f.input :ko_win
       f.input :draw
+      f.input :movie_url
       f.input :image
     end
     f.actions
@@ -27,7 +29,7 @@ ActiveAdmin.register Player do
     column :position
     column :name
     column :age
-    column :birthplace
+    column :style
     column :height
     column :weight
 
@@ -40,6 +42,7 @@ ActiveAdmin.register Player do
       row :position
       row :name
       row :age
+      row :style
       row :birthplace
       row :content
       row :height
@@ -48,6 +51,7 @@ ActiveAdmin.register Player do
       row :lose
       row :ko_win
       row :draw
+      row :movie_url
       row :image
       row :image do
         image_tag(player.image.url) if player.image?

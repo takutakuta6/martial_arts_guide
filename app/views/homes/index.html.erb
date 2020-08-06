@@ -1,13 +1,13 @@
 <div class="top-container">
   <div class="d-sm-none">
     <a class="sub-link mr-2" href="#">試合</a>
-    <a class="sub-link" href="#">選手紹介</a>
+    <%= link_to "選手紹介", players_path, class: "sub-link" %>
   </div>
   <div class="d-sm-flex align-items-center justify-content-between mr-5">
     <h1 class="top-title">Combat Stories</h1>
     <div class="d-none d-sm-block">
       <a class="sub-link mr-4" href="#">試合</a>
-      <a class="sub-link" href="#">選手紹介</a>
+      <%= link_to "選手紹介", players_path, class: "sub-link" %>
     </div>
   </div>
   <div id="top-carousel-fade" class="carousel slide carousel-fade" data-ride="carousel" data-interval=4000>
