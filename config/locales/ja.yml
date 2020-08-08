@@ -14,8 +14,10 @@ ja:
         birthplace: 出身地
       player:
         name: 名前
+        age: 年齢
         image: 画像
         group: 団体
+        style: スタイル
         birthplace: 出身地
         content: プロフィール
         position: 順番
@@ -25,6 +27,7 @@ ja:
         lose: 負け
         ko_win: ko勝ち
         draw: 引き分け
+        movie_url: 試合動画
       game_comment:
         user_id: コメント番号
         game_movie_id: 試合番号

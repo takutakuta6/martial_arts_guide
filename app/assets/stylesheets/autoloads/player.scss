@@ -1,0 +1,272 @@
+$main-color: rgb(7, 95, 153);
+$rizin-dark-color: rgb(61, 80, 122);
+
+$k-1-color: rgb(36, 32, 21);
+$k-1-dark-color: rgb(71, 69, 67);
+
+#players-container {
+  max-width: 1100px;
+
+  .movie-card {
+    background: #dfe9f3;
+
+    img {
+      opacity: 1;
+      -webkit-transition: .3s ease-in-out;
+      transition: .3s ease-in-out;
+
+      &:hover {
+        opacity: .6;
+      }
+    }
+  }
+
+  .card-text {
+    table {
+      width: 90%;
+      margin: 0 auto;
+      border-spacing: 0;
+
+      th {
+        padding: 5px 20px;
+      }
+
+      td {
+        border-bottom: solid 2px #ddd;
+        text-align: right;
+        padding: 7px 30px;
+      }
+    }
+  }
+
+  .RIZIN-card table th {
+    border-bottom: solid 2px $main-color;
+  }
+
+  .K-1-card table th {
+    border-bottom: solid 2px $k-1-color;
+  }
+
+  h2 {
+    position: relative;
+    padding-left: 40px;
+
+    &:before {
+      position: absolute;
+      content: '';
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 0;
+      border: none;
+      border-left: solid 20px transparent;
+      border-bottom: solid 30px $main-color;
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      bottom: -3px;
+      left: 10px;
+      width: 190px;
+      border-bottom: solid 5px $main-color;
+    }
+  }
+
+  h2.K-1-title {
+    &:before {
+      border-bottom: solid 30px $k-1-color;
+    }
+
+    &:after {
+      border-bottom: solid 5px $k-1-color;
+    }
+  }
+
+  h3.style-name,
+  h3.K-1-style-name {
+    position: relative;
+    display: inline-block;
+    padding: 0 55px;
+
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      display: inline-block;
+      width: 45px;
+      height: 2px;
+      border-top: solid 1px $main-color;
+      border-bottom: solid 1px $main-color;
+    }
+
+    &:before {
+      left: 0;
+    }
+
+    &:after {
+      right: 0;
+    }
+  }
+
+  h3.K-1-style-name {
+
+    &:before,
+    &:after {
+      border-top: solid 1px $k-1-color;
+      border-bottom: solid 1px $k-1-color;
+    }
+  }
+
+
+  h3.ranking_name,
+  h3.K-1-ranking_name {
+    background: linear-gradient(transparent 70%, $main-color 90%);
+    width: 200px;
+  }
+
+  h3.K-1-ranking_name {
+    background: linear-gradient(transparent 70%, $k-1-color 90%);
+  }
+
+  .player-name {
+    width: 18rem;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0.3em;
+    color: white;
+    font-size: 17px
+  }
+
+  .RIZIN-card .player-name {
+    background: $main-color;
+
+  }
+
+  .K-1-card .player-name {
+    background: $k-1-color;
+  }
+
+  // 詳細ページ
+  table.player-profile {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  table.player-profile th,
+  table.player-profile td {
+    padding: 10px 0;
+    text-align: left;
+    padding: 7px 15px;
+    color: white;
+  }
+
+  table.player-profile th {
+    white-space: nowrap;
+  }
+
+  .player-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+
+    h1 {
+      position: relative;
+      padding-left: 30px;
+
+      &:before {
+        position: absolute;
+        content: '';
+        bottom: -3px;
+        left: 0;
+        width: 0;
+        height: 0;
+        border: none;
+        border-left: solid 20px transparent;
+      }
+
+      &:after {
+        position: absolute;
+        content: '';
+        bottom: -3px;
+        left: 10px;
+        width: 285px;
+      }
+    }
+
+    .player-back {
+      position: relative;
+      display: inline-block;
+      font-weight: bold;
+      text-decoration: none;
+      color: #FFF;
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.73);
+      padding: 0.3em 0.5em;
+      border-top: solid 3px rgba(255, 255, 255, 0.73);
+      border-bottom: solid 3px rgba(255, 255, 255, 0.73);
+      transition: .4s;
+
+      &:hover {
+        text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83),
+          6px 0px 15px rgba(255, 255, 240, 0.83);
+      }
+    }
+
+    .position {
+      text-align: right;
+    }
+  }
+
+  // 詳細ページの色
+  .RIZIN-wrapper {
+    table.player-profile tr:nth-child(odd) {
+      background-color: $main-color
+    }
+
+    table.player-profile tr:nth-child(even) {
+      background-color: $rizin-dark-color;
+    }
+
+    h1 {
+      &:before {
+        border-bottom: solid 30px $main-color;
+      }
+
+      &:after {
+        border-bottom: solid 5px $main-color;
+      }
+    }
+
+    .player-back {
+      background: $main-color;
+    }
+
+  }
+
+  .K-1-wrapper {
+    table.player-profile tr:nth-child(odd) {
+      background-color: $k-1-color;
+    }
+
+    table.player-profile tr:nth-child(even) {
+      background-color: $k-1-dark-color;
+    }
+
+    h1 {
+      &:before {
+        border-bottom: solid 30px $k-1-color;
+      }
+
+      &:after {
+        border-bottom: solid 5px $k-1-color;
+      }
+    }
+
+    .player-back {
+      background: $k-1-color;
+    }
+  }
+}

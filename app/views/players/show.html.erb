@@ -1,0 +1,65 @@
+<div class="player-wrapper <%= @player.group %>-wrapper">
+  <h1>Player Profile</h1>
+  <table class="player-profile">
+    <tr>
+      <th colspan="2" class="text-center">
+        <div class="embed-responsive embed-responsive-16by9">
+          <%= movie(@player.movie_url) %>
+        </div>
+      </th>
+    </tr>
+    <tr>
+      <th>名前</th>
+      <td>
+        <%= @player.name %>
+      </td>
+    </tr>
+    <tr>
+      <th>団体</th>
+      <td>
+        <%= @player.group%>
+      </td>
+    </tr>
+    <tr>
+      <th>出身地</th>
+      <td>
+        <%= @player.birthplace%>
+      </td>
+    </tr>
+    <tr>
+      <th>年齢</th>
+      <td><%= @player.age%></td>
+    </tr>
+    <tr>
+      <th>身長</th>
+      <td><%= @player.height%></td>
+    </tr>
+    <tr>
+      <th>体重</th>
+      <td><%= @player.weight%></td>
+    </tr>
+    <tr>
+      <th>勝</th>
+      <td><%= @player.win%></td>
+    </tr>
+    <tr>
+      <th>敗</th>
+      <td><%= @player.lose%></td>
+    </tr>
+    <tr>
+      <th>KO</th>
+      <td><%= @player.ko_win%></td>
+    </tr>
+    <tr>
+      <th>分</th>
+      <td><%= @player.draw%></td>
+    </tr>
+    <tr>
+      <th>メッセージ</th>
+      <td><%= @player.content%></td>
+    </tr>
+  </table>
+  <div class="position">
+    <%= link_to "戻る", players_path, class: "player-back" %>
+  </div>
+</div>

@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users
   root "homes#index"
+  resources :players, only: [:index, :show]
 end
