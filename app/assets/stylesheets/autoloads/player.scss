@@ -2,6 +2,8 @@ $main-color: rgb(7, 95, 153);
 $k-1-color: rgb(233, 175, 17);
 
 #players-container {
+  max-width: 1100px;
+
   .movie-card {
     background: #dfe9f3;
 
@@ -143,5 +145,59 @@ $k-1-color: rgb(233, 175, 17);
   .K-1-card .player-name {
     background: $k-1-color;
   }
+
+  table.player-profile {
+    margin: 0 auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  table.player-profile th,
+  table.player-profile td {
+    padding: 10px 0;
+    text-align: left;
+    padding: 15px;
+    color: white;
+  }
+
+  table.player-profile th {
+    white-space: nowrap;
+  }
+
+  table.player-profile tr:nth-child(odd) {
+    background-color: $main-color
+  }
+
+  table.player-profile tr:nth-child(even) {
+    background-color: rgb(61, 80, 122);
+
+  }
+
+  .rizin-player {
+    position: relative;
+    padding-left: 30px;
+
+    &:before {
+      position: absolute;
+      content: '';
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 0;
+      border: none;
+      border-left: solid 20px transparent;
+      border-bottom: solid 30px $main-color;
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      bottom: -3px;
+      left: 10px;
+      width: 285px;
+      border-bottom: solid 5px $main-color;
+    }
+  }
+
 
 }
