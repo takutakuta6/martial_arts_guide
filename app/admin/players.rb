@@ -3,7 +3,7 @@ ActiveAdmin.register Player do
 
   form do |f|
     f.inputs do
-      f.input :group, as: :select, collection: %w[RIZIN K-1]
+      f.input :group, as: :select, collection: Player::GROUP_VALUES
       f.input :position, min: 1
       f.input :name
       f.input :age

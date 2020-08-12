@@ -1,4 +1,5 @@
 class GameMovie < ApplicationRecord
-  validates :catchphrase, presence: true, length: { maximum: 40 }
+  CATCHPHRASE_VALUES = %w[観るだけで人生が変わる試合 超リフレッシュする試合 観ないと損する試合]
+  validates :catchphrase, presence: true, inclusion: { in: CATCHPHRASE_VALUES }
   validates :position, numericality: { only_integer: true }
 end

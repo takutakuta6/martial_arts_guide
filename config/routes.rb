@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   devise_for :users
   root "homes#index"
   resources :players, only: [:index, :show]
+  resources :game_movies, only: [:index]
 end

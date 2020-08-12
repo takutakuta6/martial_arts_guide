@@ -33,8 +33,8 @@ ja:
         game_movie_id: 試合番号
         content: コメント
       game_movie:
-        url: 動画
-        catchphrase: タイトル
+        url: 試合
+        catchphrase: キャッチフレーズ
         position: 順番
       admin_user:
         confirmation_sent_at: パスワード確認送信時刻
