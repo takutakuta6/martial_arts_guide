@@ -1,19 +1,23 @@
 ActiveAdmin.register GameMovie do
   permit_params :url, :catchphrase, :position
 
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # Uncomment all parameters which should be permitted for assignment
-  #
-  # permit_params :url, :catchphrase, :position
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:url, :catchphrase, :position]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+  form do |f|
+    f.inputs do
+      # f.input :group, as: :select, collection: Player::GROUP_VALUES
+      f.input :catchphrase, as: :select, collection: GameMovie::CATCHPHRASE_VALUES
+      f.input :position, min: 1
+      f.input :url
+    end
+    f.actions
+  end
 
+  index do
+    selectable_column
+    id_column
+    column :catchphrase
+    column :position
+    column :url
+
+    actions
+  end
 end

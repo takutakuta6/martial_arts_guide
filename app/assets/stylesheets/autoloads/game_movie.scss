@@ -1,0 +1,136 @@
+$main-color: rgb(7, 95, 153);
+
+#game_movies-container {
+
+  h1 {
+    position: relative;
+    display: inline-block;
+    padding: 0 55px;
+  }
+
+  h1:before,
+  h1:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    width: 45px;
+    height: 1px;
+    background-color: black;
+  }
+
+  h1:before {
+    left: 0;
+  }
+
+  h1:after {
+    right: 0;
+  }
+
+
+  h2 {
+    position: relative;
+    padding-top: 30px;
+    padding-left: 40px;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+  }
+
+  h2:before {
+    position: absolute;
+    content: '';
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border: none;
+    border-left: solid 25px transparent;
+    border-bottom: solid 20px $main-color;
+  }
+
+  h2:after {
+    position: absolute;
+    content: '';
+    bottom: -3px;
+    left: 10px;
+    width: 100%;
+    border-bottom: solid 7px $main-color;
+  }
+
+  .title-choice {
+    font-size: 19px;
+  }
+
+  @media screen and (min-width: 676px) {
+    .title-choice {
+      font-size: 40px;
+    }
+  }
+
+  .right-comment {
+    display: flex;
+    justify-content: flex-end;
+    padding: 3px;
+  }
+
+  .comment {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    padding: 0 30px;
+    font-size: 19px;
+    height: 40px;
+    line-height: 40px;
+    background: $main-color;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    transition: .4s;
+
+
+  }
+
+  .comment:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    border: none;
+    border-left: solid 21px white;
+    border-bottom: solid 41px transparent;
+    z-index: 1;
+    transition: .4s;
+  }
+
+  .comment:after {
+    position: absolute;
+    content: '';
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    border: none;
+    border-left: solid 21px transparent;
+    border-bottom: solid 41px white;
+    z-index: 1;
+    transition: .4s;
+  }
+
+  .comment:hover:before,
+  .comment:hover:after {
+    border-left-width: 25px;
+  }
+
+  .comment:hover {
+    background: #2c3148;
+  }
+
+  .thumb-like {
+    color: rgb(226, 67, 107);
+  }
+
+  .thumb-unlike {
+    color: $main-color;
+  }
+}
