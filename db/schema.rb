@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_05_044548) do
+ActiveRecord::Schema.define(version: 2020_08_19_011912) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_08_05_044548) do
     t.string "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "position", null: false
     t.index ["game_movie_id"], name: "index_game_comments_on_game_movie_id"
     t.index ["user_id"], name: "index_game_comments_on_user_id"
   end
@@ -58,6 +59,7 @@ ActiveRecord::Schema.define(version: 2020_08_05_044548) do
     t.integer "position"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "comment_count", default: 0, null: false
     t.index ["catchphrase"], name: "index_game_movies_on_catchphrase"
     t.index ["url"], name: "index_game_movies_on_url", unique: true
   end

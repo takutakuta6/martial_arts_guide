@@ -1,17 +1,17 @@
-<% @game_comments.each.with_index(1) do |comment, index| %>
-  <div>
-    <p><%= comment.id %> <%=  comment.content %></p>
+<%= form_with model: [@game_movie, @game_comment], local: true do |form| %>
+  <%= form.text_field :content, required: true, maxlength: 40 %>
+  <span class="submit-comment"><%= form.submit "投稿" %></span>
+<% end %>
+<% @game_comments.each do |comment| %>
+  <div class="comment-color d-flex">
+    <div class="w-100">
+      <%=  comment.content %>
+    </div>
     <% if current_user.id == comment.user_id %>
-      <p>
-        <%= link_to game_movie_game_comment_path(@game_movie, comment), method: :delete, data: { confirm: "削除しますか？" } do %>
-          <i class="far fa-trash-alt"></i>
-        <% end %>
-      </p>
+      <%= link_to game_movie_game_comment_path(@game_movie, comment), class: "justify-content-end", method: :delete, data: { confirm: "削除しますか？" } do %>
+        <i class="far fa-trash-alt" ></i>
+      <% end %>
     <% end %>
   </div>
-  <hr>
-<% end %>
-<%= form_with model: [@game_movie, @game_comment], local: true do |form| %>
-  <%= form.text_field :content, required: true %>
-  <%= form.submit "送信" %>
+  <%= comment.position %>
 <% end %>

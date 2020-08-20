@@ -62,8 +62,8 @@ $k-1-color: rgb(233, 175, 17);
     height: auto;
   }
 
-  .top-img-3 {
-    filter: brightness(170%);
+  .top-img-1 {
+    // filter: brightness(170%);
   }
 
   .sub-link {
@@ -95,7 +95,7 @@ $k-1-color: rgb(233, 175, 17);
     }
 
     p.red-stroke {
-      @include textStroke (black)
+      @include textStroke (white)
     }
 
     p.lime-stroke {
@@ -118,4 +118,6 @@ $k-1-color: rgb(233, 175, 17);
     //   padding: 0;
     // }
   }
+
+
 }

@@ -4,4 +4,5 @@ class GameMovie < ApplicationRecord
   has_many :game_comments, dependent: :destroy
   validates :catchphrase, presence: true, inclusion: { in: CATCHPHRASE_VALUES }
   validates :position, numericality: { only_integer: true }
+  validates :comment_count, presence: true
 end

@@ -5,6 +5,8 @@ class GameCommentsController < ApplicationController
     game_movie = GameMovie.find(params[:game_movie_id])
     game_comment = current_user.game_comments.new(game_comment_params)
     game_comment.game_movie_id = game_movie.id
+    game_comment.position = game_movie.comment_count += 1
+    game_movie.save!
     game_comment.save!
     redirect_to game_movie
   end
