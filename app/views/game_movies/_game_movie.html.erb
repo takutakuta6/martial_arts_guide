@@ -4,7 +4,9 @@
   </div>
   <% if user_signed_in? %>
     <div class="right-comment">
-      <h4 class="comment">コメント</h4>
+      <%= link_to game_movie do %>
+        <h4 class="comment">コメント</h4>
+      <% end %>
       <span id="movie-like-<%= game_movie.id %>">
         <% if @liked_game_movie_ids.include?(game_movie.id) %>
           <%= render "like", game_movie: game_movie %>

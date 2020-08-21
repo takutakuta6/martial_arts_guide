@@ -16,6 +16,7 @@ ActiveAdmin.register GameMovie do
     id_column
     column :catchphrase
     column :position
+    column :comment_count
     column :url
 
     actions

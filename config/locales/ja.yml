@@ -32,10 +32,12 @@ ja:
         user_id: コメント番号
         game_movie_id: 試合番号
         content: コメント
+        position: 順番
       game_movie:
         url: 試合
         catchphrase: キャッチフレーズ
         position: 順番
+        comment_count: コメント数
       admin_user:
         confirmation_sent_at: パスワード確認送信時刻
         confirmation_token: パスワード確認用トークン

@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :game_likes, dependent: :destroy
+  has_many :game_comments, dependent: :destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
