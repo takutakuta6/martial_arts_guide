@@ -1,4 +1,5 @@
 ActiveAdmin.register GameMovie do
+  active_admin_import
   permit_params :url, :catchphrase, :position
 
   form do |f|

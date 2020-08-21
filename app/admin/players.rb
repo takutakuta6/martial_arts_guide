@@ -1,4 +1,5 @@
 ActiveAdmin.register Player do
+  active_admin_import
   permit_params Player.attribute_names.map(&:to_sym) - %i[created_at updated_at]
 
   form do |f|
