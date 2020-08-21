@@ -20,6 +20,7 @@ gem 'devise-i18n'
 
 # 管理者画面
 gem 'activeadmin'
+gem "active_admin_import"
 
 # 画像投稿機能
 gem 'carrierwave', '~> 2.0'
