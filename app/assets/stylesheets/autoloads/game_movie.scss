@@ -73,6 +73,10 @@ $main-color: rgb(7, 95, 153);
     padding: 3px;
   }
 
+  #game-movie-show-wrapper {
+    padding-bottom: 78px;
+  }
+
   .comment {
     position: relative;
     display: inline-block;
@@ -137,7 +141,9 @@ $main-color: rgb(7, 95, 153);
 
 
   .comment-color {
-    padding: 2em 2em;
+
+    position: relative;
+    padding: 1.5em 0.3em;
     margin: 2em 0;
     color: black;
     background: white;
@@ -148,5 +154,27 @@ $main-color: rgb(7, 95, 153);
   .comment-color p {
     margin: 0;
     padding: 0;
+  }
+
+  /*文字*/
+  .example-position {
+    font-size: 20px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    color: black;
+    background: white;
+    padding: 0 0px;
+    line-height: 1.5;
+  }
+
+  .w-100 {
+    padding-top: 13px;
+  }
+
+  .comment-style {
+    margin: 0 auto;
+    padding: 20px 0;
+    background-color: white;
   }
 }

@@ -1,4 +1,6 @@
 class GameMoviesController < ApplicationController
+  before_action :authenticate_user!, only: [:show]
+
   def index
     @change_movies = GameMovie.where(catchphrase: "観るだけで人生が変わる試合").order(position: :asc).limit(3)
     @refresh_movies = GameMovie.where(catchphrase: "超リフレッシュする試合").order(position: :asc).limit(3)
