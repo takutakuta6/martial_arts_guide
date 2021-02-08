@@ -26,7 +26,7 @@ gem 'activeadmin'
 gem "active_admin_import"
 
 # 画像投稿機能
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 gem 'fog-aws'
 gem 'mini_magick'
 
